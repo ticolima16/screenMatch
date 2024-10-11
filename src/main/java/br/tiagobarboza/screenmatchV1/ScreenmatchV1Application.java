@@ -1,5 +1,6 @@
 package br.tiagobarboza.screenmatchV1;
 
+import br.tiagobarboza.screenmatchV1.service.ConsumoAPI;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,8 @@ public class ScreenmatchV1Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Ola, MUNDO!");
+		ConsumoAPI consumoAPI = new ConsumoAPI();
+		var json = consumoAPI.obterDados("https://www.omdbapi.com/?i=tt3896198&apikey=ad102065");
+		System.out.println(json);
 	}
 }
