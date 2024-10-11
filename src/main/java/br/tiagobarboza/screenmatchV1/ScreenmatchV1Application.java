@@ -17,5 +17,6 @@ public class ScreenmatchV1Application implements CommandLineRunner {
 		ConsumoAPI consumoAPI = new ConsumoAPI();
 		var json = consumoAPI.obterDados("https://www.omdbapi.com/?i=tt3896198&apikey=ad102065");
 		System.out.println(json);
+
 	}
 }
