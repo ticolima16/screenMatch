@@ -1,6 +1,9 @@
 package br.tiagobarboza.screenmatchV1;
 
+import br.tiagobarboza.screenmatchV1.model.DadosSerie;
+import br.tiagobarboza.screenmatchV1.principal.Principal;
 import br.tiagobarboza.screenmatchV1.service.ConsumoAPI;
+import br.tiagobarboza.screenmatchV1.service.ConverteDados;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,9 +17,7 @@ public class ScreenmatchV1Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		ConsumoAPI consumoAPI = new ConsumoAPI();
-		var json = consumoAPI.obterDados("https://www.omdbapi.com/?i=tt3896198&apikey=ad102065");
-		System.out.println(json);
-
+		Principal principal = new Principal();
+		principal.exibeMenu();
 	}
 }
